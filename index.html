@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vault Game</title>
+    <style>
+      body,
+      html {
+        height: 100%;
+        margin: 0;
+        font-family: Arial, sans-serif;
+        overflow: hidden; /* Prevent scrolling */
+      }
+
+      .background {
+        background-image: url("vault.jpg"); /* Adjust based on your image path */
+        background-size: cover;
+        background-position: center;
+        position: fixed; /* Ensures the background is fixed */
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center; /* Center the content div horizontally and vertically */
+      }
+
+      .content {
+        background: rgba(
+          0,
+          0,
+          0,
+          0.75
+        ); /* Semi-transparent background for better visibility */
+        padding: 20px;
+        border-radius: 10px;
+        width: 300px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Adds shadow for better contrast */
+        display: flex; /* Enables flexbox */
+        flex-direction: column; /* Aligns children (input and button) in a column */
+        align-items: center; /* Centers children horizontally */
+        justify-content: center; /* Centers children vertically */
+      }
+
+      input,
+      button {
+        width: 100%;
+        padding: 10px;
+        margin-top: 10px; /* Adds space between input and button */
+        border-radius: 5px;
+        border: none;
+      }
+
+      button {
+        background-color: gold;
+        color: black;
+        cursor: pointer;
+        font-weight: bold; /* Makes the text bold */
+      }
+
+      button:hover {
+        background-color: darkgoldenrod;
+      }
+
+      /* Ensure SweetAlert is properly layered */
+      .swal2-container {
+        z-index: 1000; /* High enough to be on top of everything else */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="background">
+      <div class="content">
+        <h1 style="color: white">Enter Vault Code</h1>
+        <input type="text" id="passwordInput" placeholder="Password" />
+        <button onclick="checkPassword()">Unlock</button>
+        <div id="message" style="color: red; margin-top: 10px"></div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+      const failureMessages = [
+        "Access Denied. Incorrect Code.",
+        "Failure. The code does not match.",
+        "Invalid Entry. Try a different combination.",
+        "Error. Code rejected.",
+        "Wrong code. This vault is still locked.",
+      ];
+
+      function checkPassword() {
+        const input = document.getElementById("passwordInput");
+        const randomIndex = Math.floor(Math.random() * failureMessages.length);
+
+        Swal.fire({
+          icon: "error",
+          title: "Vault Locked",
+          text: failureMessages[randomIndex],
+          backdrop: "rgba(0,0,0,0.85)", // Ensures modal background is consistent
+        });
+
+        input.value = ""; // Clear input after each attempt
+      }
+    </script>
+  </body>
+</html>

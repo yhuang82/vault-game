@@ -68,17 +68,33 @@
       .swal2-container {
         z-index: 1000; /* High enough to be on top of everything else */
       }
+      .vault-title {
+        position: absolute; /* Position it relative to the background */
+        top: 20px; /* Distance from the top */
+        left: 50%; /* Center horizontally */
+        transform: translateX(-50%); /* Ensure it is centered */
+        color: rgb(255, 204, 0); /* Gold color to match the vault theme */
+        text-align: center;
+        width: 100%; /* Full width to ensure centering works */
+        font-size: 2em; /* Large font size for visibility */
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8); /* Text shadow for better readability */
+      }
+      h2 {
+        color: #ffd700; /* Gold color example, change to whatever color you prefer */
+      }
     </style>
   </head>
   <body>
     <div class="background">
+      <h1 class="vault-title">Welcome to The HR Advantage's Vault</h1>
       <div class="content">
-        <h1 style="color: white">Enter Vault Code</h1>
+        <h2>Enter Vault Code</h2>
         <input type="text" id="passwordInput" placeholder="Password" />
         <button onclick="checkPassword()">Unlock</button>
         <div id="message" style="color: red; margin-top: 10px"></div>
       </div>
     </div>
+
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
       const failureMessages = [

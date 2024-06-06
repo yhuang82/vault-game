@@ -80,13 +80,25 @@
         text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8); /* Text shadow for better readability */
       }
       h2 {
-        color: #ffd700; /* Gold color example, change to whatever color you prefer */
+        color: rgb(255, 204, 0); /* Gold color example, change to whatever color you prefer */
+      }
+      .sub-title {
+        position: absolute;
+        top: 60px; /* Adjust the position as needed */
+        left: 50%; /* Center horizontally */
+        transform: translateX(-50%); /* Ensure it is centered */
+        color: rgb(255, 204, 0); /* Gold color to match the vault theme */
+        text-align: center;
+        width: 100%; /* Full width to ensure centering works */
+        font-size: 1.5em; /* Slightly smaller than the main title */
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8); /* Text shadow for better readability */
       }
     </style>
   </head>
   <body>
     <div class="background">
       <h1 class="vault-title">Welcome to The HR Advantage's Vault</h1>
+      <h2 class="sub-title">The Amazing Features COMING Soon</h2>
       <div class="content">
         <h2>Enter Vault Code</h2>
         <input type="text" id="passwordInput" placeholder="Password" />

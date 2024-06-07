@@ -68,39 +68,59 @@
       .swal2-container {
         z-index: 1000; /* High enough to be on top of everything else */
       }
-      .vault-title {
-        position: absolute; /* Position it relative to the background */
-        top: 20px; /* Distance from the top */
-        left: 50%; /* Center horizontally */
-        transform: translateX(-50%); /* Ensure it is centered */
-        color: rgb(255, 204, 0); /* Gold color to match the vault theme */
-        text-align: center;
-        width: 100%; /* Full width to ensure centering works */
-        font-size: 2em; /* Large font size for visibility */
-        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8); /* Text shadow for better readability */
-      }
+
       h2 {
-        color: rgb(255, 204, 0); /* Gold color example, change to whatever color you prefer */
+        color: rgb(
+          255,
+          204,
+          0
+        ); /* Gold color example, change to whatever color you prefer */
       }
+      .vault-title {
+        position: absolute;
+        top: 20px; /* Adjust as necessary */
+        left: 50%;
+        transform: translateX(-50%);
+        color: gold;
+        text-align: center;
+        width: 100%;
+        font-size: 2.5em;
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+      }
+
       .sub-title {
         position: absolute;
-        top: 60px; /* Adjust the position as needed */
-        left: 50%; /* Center horizontally */
-        transform: translateX(-50%); /* Ensure it is centered */
-        color: rgb(255, 204, 0); /* Gold color to match the vault theme */
+        top: 70px; /* Adjust based on your layout needs */
+        left: 50%;
+        transform: translateX(-50%);
+        color: gold;
         text-align: center;
-        width: 100%; /* Full width to ensure centering works */
-        font-size: 1.5em; /* Slightly smaller than the main title */
-        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8); /* Text shadow for better readability */
+        width: 100%;
+        font-size: 1.5em;
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8)
+      }
+
+      .coming-soon {
+        position: absolute;
+        top: 120px; /* Adjust based on your layout needs */
+        left: 50%;
+        transform: translateX(-50%);
+        color: gold;
+        text-align: center;
+        width: 100%;
+        font-size: 1.2em;
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+        font-style: italic;
       }
     </style>
   </head>
   <body>
     <div class="background">
-      <h1 class="vault-title">Welcome to The HR Advantage's Vault</h1>
-      <h2 class="sub-title">The Amazing Features COMING Soon</h2>
+      <h1 class="vault-title">THE VAULT</h1>
+      <h2 class="sub-title">A Professional Co-Working Space</h2>
+      <h3 class="coming-soon">Coming Soon to Fort Macleod, Alberta</h3>
       <div class="content">
-        <h2>Enter Vault Code</h2>
+        <h2>Crack the Vault Code</h2>
         <input type="text" id="passwordInput" placeholder="Password" />
         <button onclick="checkPassword()">Unlock</button>
         <div id="message" style="color: red; margin-top: 10px"></div>
